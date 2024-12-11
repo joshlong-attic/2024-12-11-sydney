@@ -82,10 +82,15 @@ class IntegrationConfiguration {
 	}
 
 	@Bean
-	IntegrationFlow outboundKafkaFlow(MessageChannel kafkaMessageChannel,
-			KafkaTemplate<Object, Object> pageViewEventKafkaTemplate) {
+	IntegrationFlow outboundKafkaFlow(
+			MessageChannel kafkaMessageChannel,
+			KafkaTemplate<Object, Object> pageViewEventKafkaTemplate
+	) {
 		var kafkaOutboundAdapter = Kafka.outboundChannelAdapter(pageViewEventKafkaTemplate);
-		return IntegrationFlow.from(kafkaMessageChannel).handle(kafkaOutboundAdapter).get();
+		return IntegrationFlow
+				.from(kafkaMessageChannel)
+				.handle(kafkaOutboundAdapter)
+				.get();
 	}
 
 }
@@ -95,15 +100,18 @@ class IntegrationConfiguration {
 class RunnerConfiguration {
 
 	@Bean
-	ApplicationListener<ApplicationReadyEvent> runner(KafkaTemplate<Object, Object> template,
-			MessageChannel kafkaMessageChannel, StreamBridge streamBridge) {
+	ApplicationListener<ApplicationReadyEvent> runner(KafkaTemplate<Object, Object> template
+			//,MessageChannel kafkaMessageChannel, 
+	,StreamBridge streamBridge		//,
+//, 
+	) {
 		var executorService = Executors.newScheduledThreadPool(1);
 		return event -> executorService.schedule(() -> {
 			try {
 				for (var i = 0; i < 100; i++) {
-					template(template);
-					integration(kafkaMessageChannel);
-					stream(streamBridge);
+//					template(template);
+//					integration(kafkaMessageChannel);
+//					stream(streamBridge);
 				}
 			}//
 			catch (Throwable throwable) {

@@ -1,4 +1,4 @@
-xservices:
+services:
   postgres:
     image: 'postgres:latest'
     environment:

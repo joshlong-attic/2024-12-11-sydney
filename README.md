@@ -49,6 +49,13 @@ youtube.com/@coffeesoftware
 * basics
 * AOT lifecycles
 
+## Scalability 
+* non-blocking IO
+* virtual threads
+* José Paumard's demo
+* Cora Iberkleid's demo 
+
+
 ## Cloud Native Java (with Kubernetes)
  * graceful shutdown 
  * `ConfigMap` and you 
@@ -61,15 +68,6 @@ youtube.com/@coffeesoftware
 * Flyway
 * Spring Data JDBC
 
-## Batch Processing 
-* Spring Batch
-* load some data from a CSV file to a SQL database
-
-## Scalability 
-* non-blocking IO
-* virtual threads
-* José Paumard's demo
-* Cora Iberkleid's demo 
 
 ## Web Programming
 * clients: `RestTemplate`, `RestClient`, declarative interface clients
@@ -86,13 +84,9 @@ youtube.com/@coffeesoftware
 * Externalized messages
 * Testing 
 
-## Artificial Intelligence
-* what's in a model?
-* Spring AI
-* `ChatClient`
-* prompts
-* advisors
-* Retrieval Augmented Generation (RAG)
+## Batch Processing 
+* Spring Batch
+* load some data from a CSV file to a SQL database
 
 ## Microservices
 * centralized configuration 
@@ -100,8 +94,6 @@ youtube.com/@coffeesoftware
 	* reactive or not reactive
 * event bus and refreshable configuration
 * service registration and discovery
-
-
 
 ## Messaging and Integration
 * "What do you mean by Event Driven?"
